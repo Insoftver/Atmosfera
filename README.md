@@ -1,15 +1,7 @@
- <table style="width:100%">
-  <tr>
-    <td><img src="lib/images/readme/logo.png" alt="Insoftver"></td>
-    <td>
-    	<h1>Atmosfera</h1>
-    	<h3>Ruby On Rails simple environment.</h3>
-    	<p>
-    		This gem is aimed to help future Insoftver developers to avoid initialization of an RoR server environment. It intention is to reduce te RoR environment setup to simple rails generators. While building it Agile Methodology was practiced so it will be updated on that pace.
-    	</p>
-    </td>
-  </tr>
-</table> 
+<img src="lib/images/readme/logo.png" alt="Insoftver"> 
+<h1>Atmosfera</h1>
+<h3>Ruby On Rails simple environment.</h3>
+<p>This gem is aimed to help future Insoftver developers to avoid initialization of an RoR server environment. It intention is to reduce te RoR environment setup to simple rails generators. While building it Agile Methodology was practiced so it will be updated on that pace.</p>
 
 <h3>Getting started</h3>
 <p>Atmosfera 1.0 works with Rails 6.0 onwards. Add the following line to your Gemfile:</p>
