@@ -22,7 +22,7 @@ gem 'atmosfera'
 	The <b>rails generate atmosfera:start generator</b> will install the Start controller its views and apply the Insoftver CSS layouts to the Devise views. It sets the root_path to the Start controller index.html.erb file.<br><br>
 	It is necessary to know that we need to have previously installed the Devise gem. Once this last done, Atmosfera creates the following files:
 	<ul>
-	On the app/assets/images/start/ folder:<br>
+	On the app/assets/images/start/ folder:
 		<br>
 		<li>250x250px icon.xcf file with the following exportings.</li>
 		<li>favicon.png</li>
@@ -69,24 +69,44 @@ gem 'atmosfera'
 		<li>250x250px no_item_photo.xcf file and its exporting no_item_photo.png</li>
 	</ul>
 	<ul>
-	On the app/assets/stylesheets/ folder:<br>
+	On the app/assets/stylesheets/ folder:
 		<br>
 		<li>start.scss</li>
 	</ul>
 	<ul>
-	On the app/controllers/ folder:<br>
+	On the app/controllers/ folder:
 		<br>
 		<li>start_controller.rb</li>
 	</ul>	
 	<ul>
-	On the app/views/start/ folder:<br>
+	On the app/views/start/ folder:
 		<br>
 		<li>index.html.erb</li>
 		<li>_menu.html.erb</li>
 		<li>_top.html.erb</li>
 		<li>_bottom.html.erb</li>
 	</ul>
-	It is neccesary to excecute the rake routes command on the terminal in order to set the changes done in the routes.rb file.
+	NOTE: It is neccesary to excecute the rake routes command on the terminal in order to set the changes done in the routes.rb file.<br><br>
+	The <b>rails generate atmosfera:calendar</b> generator will install the Callendar controller its views with the Insoftver CSS layouts.It creates the following files:<br><br>
+	<ul>
+	On the app/views/calendar/ folder:
+		<br>
+		<li>start.html.erb</li>
+		<li>_month.html.erb</li>
+		<li>_week.html.erb</li>
+		<li>_day.html.erb</li>
+	</ul>
+	<ul>
+	On the app/assets/stylesheets/ folder:
+		<br>
+		<li>calendar.scss</li>
+	</ul>
+	<ul>
+	On the app/controllers/ folder:
+		<br>
+		<li>calendar_controller.rb</li>
+	</ul>
+	NOTE: It is neccesary to excecute the rake routes command on the terminal in order to set the changes done in the routes.rb file.<br><br>
 </p>
 
 <h3>Releases</h3>
