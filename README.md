@@ -19,7 +19,7 @@
 <h3>Usage</h3>
 <p>
 	It is necessary to have a clean Rails project, if possible just created. After installation on the Gemfile some generators can be run, they will be listed and updated on this document.<br>
-	<h4>rails generate atmosfera:start</h4>
+	<blockquote>rails generate atmosfera:start</blockquote>
 	This generator will install the Start controller its views and apply the Insoftver CSS layouts to the Devise views. It sets the root_path to the Start controller index.html.erb file.
 	It is necessary to know that we need to have previously installed the Devise gem. Once this last done, Atmosfera creates the following files:<br><br>
 	<ul>
@@ -112,7 +112,7 @@
 	</ul>
 	Atmosfera will configure the Devise gem internationalization for Spanish Language as well.<br>
 	<br>
-	<h4>rails generate atmosfera:calendar</h4>
+	<blockquote>rails generate atmosfera:calendar</blockquote>
 	This generator will install the Calendar controller its views with the Insoftver CSS layouts.It creates the following files:<br>
 	<ul>
 	On the app/views/calendar/ folder:
