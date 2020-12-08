@@ -111,18 +111,10 @@
 	app/views/devise/unlocks (V2.0).
 		<li>new.html.erb</li><br>
 	</ul>
-	Atmosfera will configure the Devise gem internationalization for Spanish Language as well.<br>
-	<br>
+	NOTE: Atmosfera will configure the Devise gem internationalization for Spanish Language as well.<br>
+	<br><br>
 	<blockquote>rails generate atmosfera:calendar</blockquote>
 	This generator will install the Calendar controller its views with the Insoftver CSS layouts. It creates the following files:<br><br>
-	<ul>
-	On the app/views/calendar/ folder:
-		<br>
-		<li>start.html.erb</li>
-		<li>_month.html.erb</li>
-		<li>_week.html.erb</li>
-		<li>_day.html.erb</li>
-	</ul>
 	<ul>
 	On the app/assets/stylesheets/ folder:
 		<br>
@@ -132,6 +124,14 @@
 	On the app/controllers/ folder:
 		<br>
 		<li>calendar_controller.rb</li>
+	</ul>	
+	<ul>
+	On the app/views/calendar/ folder:
+		<br>
+		<li>start.html.erb</li>
+		<li>_month.html.erb</li>
+		<li>_week.html.erb</li>
+		<li>_day.html.erb</li>
 	</ul>
 	NOTE: It is neccesary to execute the <b>rake routes</b> command on the terminal in order to set the changes done in the routes.rb file.<br><br>	
 </p>
