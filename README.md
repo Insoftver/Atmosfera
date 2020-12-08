@@ -113,7 +113,7 @@
 	Atmosfera will configure the Devise gem internationalization for Spanish Language as well.<br>
 	<br>
 	<blockquote>rails generate atmosfera:calendar</blockquote>
-	This generator will install the Calendar controller its views with the Insoftver CSS layouts.It creates the following files:<br>
+	This generator will install the Calendar controller its views with the Insoftver CSS layouts. It creates the following files:<br><br>
 	<ul>
 	On the app/views/calendar/ folder:
 		<br>
