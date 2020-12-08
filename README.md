@@ -138,6 +138,16 @@
 	NOTE: It is neccesary to execute the <b>rake routes</b> command on the terminal in order to set the changes done in the routes.rb file.<br><br>	
 </p>
 
+<h3>Menu</h3>
+<p>Atmosfera _menu.html.erb file is almost empty, it just contains the devise login links. Here is the right place to put your own project links. Some examples of that could be: </p>
+<ul>
+	<li>Pricing</li>
+	<li>Products</li>
+	<li>Services</li>
+	<li>About us</li>
+	<li>Contact</li>
+</ul>
+<br>
 <h3>Releases</h3>
 <table style="width:100%">
 	<tr>
