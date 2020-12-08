@@ -14,7 +14,7 @@
 <h3>Getting started</h3>
 <p>Atmosfera 1.0 works with Rails 6.0 onwards. Add the following line to your Gemfile:</p>
 
-gem 'atmosfera'
+<blockquote>gem 'atmosfera'</blockquote>
 
 <h3>Usage</h3>
 <p>
