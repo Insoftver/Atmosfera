@@ -111,8 +111,6 @@
 	app/views/devise/unlocks (V2.0).
 		<li>new.html.erb</li><br>
 	</ul>
-	NOTE: At this point of installation, Atmosfera will configure the Devise gem internationalization for Spanish Language as well.<br>
-	<br><br>
 	<blockquote>rails generate atmosfera:calendar</blockquote>
 	This generator will install the Calendar controller its views with the Insoftver CSS layouts. It creates the following files:<br><br>
 	<ul>
@@ -137,7 +135,48 @@
 	<img src="lib/images/readme/calendar_sketch.png" alt="Calendar Views Sketch"><br>	
 	NOTE: It is neccesary to execute the <b>rake routes</b> command on the terminal in order to set the changes done in the routes.rb file.<br><br>	
 </p>
-
+	<h3>Locales</h3>
+	Atmosfera by default will configure the Devise gem internationalization for Spanish Language. However it is necessary to setup the timezone and locals on some files after installation.<br><br>
+	On the config/application.rb file add the following code in order setup the time according to your prefered timezone.
+	<blockquote>
+		<br>
+		# Setting local timezone<br>
+    	config.time_zone = 'America/Mexico_City'<br>
+    	config.active_record.default_timezone = :local<br>
+    	config.beginning_of_week = :sunday<br>
+		<br>    	
+	</blockquote>
+	On the same file you may add the following code in order to setup the locales.
+	<blockquote>
+		<br>
+    	# Setting locales<br>
+    	config.i18n.available_locales = [:en, :es]<br>
+    	config.i18n.default_locale = :en<br>
+    	# If some translation is not found sets the default instead of display nothing or error<br>
+    	config.i18n.fallbacks = true<br>
+		<br>    	
+	</blockquote>
+	After that, it is necesary to set the way we are going to choose some local, there will be two methods by default. First one is using <b>params[:lang]</b> to set the language two letter prefix (:en, :es, :de). Second will be using the HTTP_ACCEPT_LANGUAGE method referenced <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language">here</a> In order to make these changes the following modifications must be done.
+	On the app/controllers/application_controller.rb file add the following code.
+	<blockquote>
+		<br>
+		# Setting locales<br>
+		before_action :set_locale<br>
+		<br>
+		def set_locale<br>
+ 		# Locales can be set from params if given<br>
+ 		I18n.locale = params[:lang] || locale_from_header<br>
+		end<br>
+		<br>
+		def locale_from_header<br>
+ 		# This function gets the locale from the browser according to this reference:<br>
+ 		# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language<br>
+ 		# The regular expresion [a-z]{2} gets the short name of the language => es-CH, es;q=0.9, en;q=0.8, *;q=0.5<br>
+  		request.env.fetch('HTTP_ACCEPT_LANGUAGE', '').scan(/[a-z]{2}/).first<br>
+		end<br>
+		<br>    	
+	</blockquote>
+	Note: It may be neccesary to restart the server after these changes.<br>
 <h3>Menu</h3>
 <p>Atmosfera _menu.html.erb file is almost empty, it just contains the devise login links. Here is the right place to put your own project links. Some examples of that could be: </p>
 <ul>
