@@ -20,8 +20,11 @@
 <p>
 	It is necessary to have a clean Rails project, if possible just created. After installation on the Gemfile some generators can be run, they will be listed and updated on this document.<br>
 	<blockquote>rails generate atmosfera:start</blockquote>
-	This generator will install the Start controller its views and apply the Insoftver CSS layouts to the Devise views. It sets the root_path to the Start controller index.html.erb file.
-	It is necessary to know that we need to have previously installed the Devise gem. Once this last done, Atmosfera creates the following files:<br><br>
+	This generator will install the Start controller its views and apply the Insoftver CSS layouts to the Devise views. It will be needed to set the root_path to the Start controller index.html.erb file by replacing.
+	<blockquote>get 'start/index'</blockquote><br>
+	With the rooth_path setting:
+	<blockquote>root 'start#index'</blockquote>
+	It is necessary as well to know that we need to have previously installed the Devise gem. Once this last done, Atmosfera creates the following files:<br><br>
 	<ul>
 	app/assets/images/start
 		<br>
