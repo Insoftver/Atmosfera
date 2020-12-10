@@ -1,0 +1,7 @@
+<h1 class="first">Start#index</h1>
+<% if user_signed_in? %>
+  <% name = 'Diego' %>
+  <p class='second'><%= "#{translate ('hello')} #{name}!" %></p>
+<% else# user_signed_in? %>
+<% end# user_signed_in? %>
+<p class="neutral"><%= "#{(translate ('find_me_in')).capitalize} app/views/start/index.html.erb" %></p>
