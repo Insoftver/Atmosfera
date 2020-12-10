@@ -15,40 +15,42 @@
  */
 
 :root {
-	
-	/* Website colors */
-	--first: #8358a0;
-	--second: #2da4a8;
-	--third: #c356b2;
-	--neutral: #808080;
-	--background: #ffffff;
+  
+  /* Website colors */
+  --first: #8358a0;
+  --second: #2da4a8;
+  --third: #c356b2;
+  --neutral: #808080;
+  --background: #ffffff;
 
-	/* H1 to H6 fonts */
-	--title-font: "Verdana", sans-serif ;
-	--title-text-align: left; /* center, left, right, justify */
-	--title-text-decoration: none; /* overline, line-through, underline */
-	--h1-font-size: 6vh; /* Can be % px vh*/
-	--h2-font-size: 5vh; 
-	--h3-font-size: 4vh; 
-	--h4-font-size: 3vh; 
-	--h5-font-size: 2.5vh; 
-	--h6-font-size: 2vh; 
-	--p-font-size: 1.5vh; 
+  /* H1 to H6 fonts */
+  --title-font: "Arial", sans-serif ;
+  --title-text-align: left; /* center, left, right, justify */
+  --title-text-decoration: none; /* overline, line-through, underline */
+  --h1-font-size: 4vw; /* Can be % px vh vw*/
+  --h2-font-size: 3.5vw; 
+  --h3-font-size: 3vw; 
+  --h4-font-size: 2.5vw; 
+  --h5-font-size: 2vw; 
+  --h6-font-size: 1.5vw; 
+  --p-font-size: 2vw; 
 
-	/* P fonts */
-	--paragraph-font-family: "Arial", sans-serif;
-    --paragraph-text-decoration: none; /* overline, line-through, underline */
-    --paragraph-text-align: justify; /* center left, right, justify */
-    --paragraph-margin-left: 5vh; /* Can be % px vh */
-    --paragraph-margin-right: 5vh; 
+  /* P fonts */
+  --paragraph-font-family: "Arial", sans-serif;
+  --paragraph-text-decoration: none; /* overline, line-through, underline */
+  --paragraph-text-align: justify; /* center left, right, justify */
+  --paragraph-margin-left: 1.5vw; /* Can be % px vw */
+  --paragraph-margin-right: 1vw; 
 
-    /* Link decoration, can be overline, underline, line-through, underline overline, none */
-	--a-text-decoration-link: none;
-	--a-text-decoration-visited: none;
-	--a-text-decoration-hover: underline overline;
-	--a-text-decoration-active: none;
+  /* Link decoration, can be overline, underline, line-through, underline overline, none */
+  --a-text-decoration-link: none;
+  --a-text-decoration-visited: none;
+  --a-text-decoration-hover: none;
+  --a-text-decoration-active: none;
 
 }
+
+img.navigation { width: 3vw; } /* Used to display database and page navigation icons */
 
 /* ########################################################################################################## */
 
