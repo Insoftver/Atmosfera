@@ -1,0 +1,18 @@
+<h2 class='second'><%= (translate ('sign_up')).capitalize %></h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <p class='neutral'>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= (translate ('email')).capitalize %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br><br>
+    <%= (translate ('password')).capitalize %><br>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> <%= translate ('characters_minimum') %>)</em>
+    <% end %><br>
+    <%= f.password_field :password, autocomplete: "new-password" %><br><br>
+    <%= (translate ('password_confirmation')).capitalize %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br><br>
+    <%= f.submit "#{(translate ('sign_up')).capitalize}" %><br><br>
+    <%= render "devise/shared/links" %>
+  </p>
+<% end %>
+

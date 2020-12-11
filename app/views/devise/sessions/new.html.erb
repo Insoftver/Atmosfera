@@ -1,0 +1,14 @@
+<h2 class='second'><%= (translate ('log_in')).capitalize %></h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <p class='neutral'>
+    <%= (translate ('email')).capitalize %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br><br>
+    <%= (translate ('password')).capitalize %><br>
+    <%= f.password_field :password, autocomplete: "current-password" %><br><br>
+    <% if devise_mapping.rememberable? %>
+      <%= f.check_box :remember_me %> <%= translate ('.remember_me') %><br><br>
+    <% end %>
+    <%= f.submit "#{(translate ('log_in')).capitalize}" %>
+  </p>
+<% end# of form_for %>
+<p class='second'><%= render "devise/shared/links" %></p>

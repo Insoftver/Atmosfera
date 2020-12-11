@@ -1,0 +1,10 @@
+<h2 class='second'><%= translate ('resend_confirmation_instructions') %></h2>
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <p class='neutral'>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= (translate ('email')).capitalize %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %><br><br>
+    <%= f.submit "#{translate ('resend_confirmation_instructions')}" %><br><br>
+    <%= render "devise/shared/links" %>
+  </p>
+<% end %>
