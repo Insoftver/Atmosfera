@@ -12,10 +12,14 @@ en:
   characters_minimum: 'characters minimum'
   password_confirmation: 'password confirmation'
   forgot_your_password: 'Forgot your password?'
+  change_your_password: 'Change your password'
+  change_my_password: 'Change my password'
+  new_password: 'new password'
+  confirm_new_password: 'confirm_new_password'
   send_me_reset_password_instructions: 'Send me reset password instructions'
   didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
-  didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
   resend_confirmation_instructions: 'Resend confirmation instructions'
+  didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
   resend_unlock_instructions: 'Resend unlock instructions'
 
   devise:
