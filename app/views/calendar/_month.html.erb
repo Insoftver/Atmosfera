@@ -1,0 +1,61 @@
+<table style="width:100%;"><%# Header table %>
+  <tr>
+    <%=  %>
+    <th style="width:15%;"><%= link_to image_tag('start/icon_green_left_arrow.png', :width => '50%', :height => 'auto', :title => 'left ->', :alt => '>'), { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: @calendar.date.prev_month }, class:  "second_to_first" %></th>
+    <th style="width:70%;"><font style="font-size:1.5vw;font-family:'sans-serif';color:#808080"><%= (translate (@calendar.date.strftime("%B").downcase)).capitalize %> <%= @calendar.date.strftime("%Y") %></font></th><%# Date label %>
+    <th style="width:15%;"><%= link_to image_tag('start/icon_green_right_arrow.png', :width => '50%', :height => 'auto', :title => '<- right', :alt => '<'), { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: @calendar.date.next_month }, class:  "second_to_first"%></th>
+  </tr>
+</table>
+
+<table style="width:100%;"><%# Body table %>
+  <tr>
+    <th></th><%# Space for weekdays numbers on header %>
+    <% @weekdays = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ] # Weekdays names %>
+    <% @weekdays.each do |day| %><%# Sets weekdays by name %>
+      <th><font style="font-size:1.5vw;font-family:'sans-serif';color:#808080"><%= (translate (day)).capitalize %></font></th>
+    <% end %>
+  </tr>
+  <%# Sets each month into weeks and indexes them (.each_with_index) %>
+  <% @calendar.year[@calendar.date.strftime("%-m").to_i-1].each_with_index do | week | %>
+    <tr>
+      <td>
+        <% unless week.first.nil? && week.last.nil? then %><%# Sets the week number unless no days on week are found  so... %>
+          <%# If one of them, first or last weekdays exists the next 'if' sets the week number on its row %>
+          <% if week.first.nil? then week_number = week.last.strftime("%U") else week_number = week.first.strftime("%U") end %>
+          <center><font style="font-size:2vw;font-family:'sans-serif';color:#808080"><%= week_number.to_i + 1 %></font></center><%# Prints week number +1 to compensate index 0 %>
+        <% end %>
+      </td>
+
+      
+      <% week.each do | day | %>
+        <%# Numbers each week and sets them into days %>
+        <td><center>
+          <% if day.nil?  %>
+            <%# Prints a link to each day of the month and gets its date to params[:date] and empty days as spaces %>
+            <%= day %>
+          <% else# of day.nil? %>
+            <% if day == Date.today  %>
+              <font style="font-size:1.5vw;font-family:'sans-serif';">
+              <%= link_to "#{day.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: day }, class: "neutral" %>
+              </font>
+            <% else# of day == Date.today %>
+              <% if day.strftime("%a") == 'Sat' || day.strftime("%a") == 'Sun' %>
+                <font style="font-size:1.5vw;font-family:'sans-serif';">
+                <%= link_to "#{day.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: day }, class: "first_to_neutral" %>
+                </font>
+              <% else# of day.strftime("%a") == 'Sat' || day.strftime("%a") == 'Sun' %>
+                <font style="font-size:1.5vw;font-family:'sans-serif';">
+                <%= link_to "#{day.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: day }, class: "second_to_neutral" %>
+                </font>
+              <% end# of day.strftime("%a") == 'Sat' || day.strftime("%a") == 'Sun' %>
+            <% end# of day == Date.today %>
+          <% end# of day.nil? %>
+        </center></td>
+      <% end# of week.each do | day | %>
+    </tr>
+  <% end %>
+</table>
+
+<p class="neutral"><%= "#{(translate ('find_me_in')).capitalize} app/views/start/_month.html.erb" %></p>
+
+

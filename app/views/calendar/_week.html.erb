@@ -1,0 +1,57 @@
+<% @calendar.year[@calendar.date.strftime("%-m").to_i-1].each_with_index do | week | %>
+  <% week.each do | day | %>
+    <% if day == Date.today %>
+      <% unless week.first.nil? && week.last.nil? then %><%# Sets the week number unless no days on week are found  so... %>
+        <%# If one of them, first or last weekdays exists the next 'if' sets the week number on its row %>
+        <% if week.first.nil? then week_number = week.last.strftime("%U") else week_number = week.first.strftime("%U") end %>
+        <table style="width:100%;"><%# Header table %>
+          <tr>
+            <%=  %>
+            <th style="width:15%;"><%= link_to image_tag('start/icon_green_left_arrow.png', :width => '50%', :height => 'auto', :title => 'left ->', :alt => '>', class:  "navigation"), { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: @calendar.date - 1.week } %></th>
+            <th style="width:70%;"><font style="font-size:2vw;font-family:'sans-serif';color:#808080"><%= (translate ('week')).capitalize %> <%= week_number.to_i + 1 %></th><%# Week number %>
+            <th style="width:15%;"><%= link_to image_tag('start/icon_green_right_arrow.png', :width => '50%', :height => 'auto', :title => '<- right', :alt => '<', class:  "navigation"), { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: @calendar.date + 1.week } %></th>
+          </tr>
+        </table>
+      <% end# of unless week.first.nil? && week.last.nil? then %>
+    <% end# of day == Date.today %>
+  <% end# of week.each do | day | %>
+<% end %>
+
+<table style="width:100%;"><%# Body table %>
+  <tr>
+    <% @weekdays = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ] # Weekdays names %>
+    <% @weekdays.each do |day| %><%# Sets weekdays by name %>
+      <th><font style="font-size:1.5vw;font-family:'sans-serif';color:#808080"><%= (translate (day)).capitalize %></font></th>
+    <% end %>
+  </tr>
+  <% @calendar.year[@calendar.date.strftime("%-m").to_i-1].each_with_index do | week | %>
+    <tr>   	
+      <% week.each do | day | %>
+        <% if day == Date.today %>
+          <% 7.times do |d| %>
+            <% date = Date.parse(week[d].to_s) %>
+            <% if date == Date.today  %>
+              <th><font style="font-size:1.5vw;font-family:'sans-serif';">
+              	<%= link_to "#{date.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: date }, class: "neutral" %>
+              </font></th>
+            <% else# of date == Date.today %>
+              <% if date.strftime("%a") == 'Sat' || date.strftime("%a") == 'Sun' %>
+                <th><font style="font-size:1.5vw;font-family:'sans-serif';">
+                  <%= link_to "#{date.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: date }, class: "first_to_neutral" %>
+                </font></th>
+              <% else# of date.strftime("%a") == 'Sat' || date.strftime("%a") == 'Sun' %>
+                <th><font style="font-size:1.5vw;font-family:'sans-serif';">
+                <%= link_to "#{date.strftime("%d").to_i}", { controller: "#{@current_path[:controller]}", action: "#{@current_path[:action]}", date: date }, class: "second_to_neutral" %>
+                </font></th>
+              <% end# of date.strftime("%a") == 'Sat' || date.strftime("%a") == 'Sun' %>
+            <% end# of date == Date.today %>
+          <% end# of 7.times do |d| %>            
+        <% end# of day == Date.today %>
+      <% end# of week.each do | day | %> 
+    </tr> 
+  <% end %>
+</table>
+
+<p class="neutral"><%= "#{(translate ('find_me_in')).capitalize} app/views/start/_week.html.erb" %></p>
+
+

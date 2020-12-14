@@ -1,0 +1,17 @@
+<h1 class="first"><center>Calendar</center></h1>
+<table style="width:100%;"><%# Body table %>
+  <tr>
+    <td style="width:25%;" >	
+      <%#= render 'month' %><%#= render 'single_calendar/month' %>
+    </td>
+    <td style="width:50%;" >
+      <%= render 'week' %><%#= render 'single_calendar/week' %>
+    </td>
+    <td style="width:25%;" >
+      <%#= render 'day' %><%#= render 'single_calendar/day' %>
+    </td>
+  </tr>
+</table>
+<p class="neutral"><%= "#{(translate ('find_me_in')).capitalize} app/views/start/start.html.erb" %></p>
+
+

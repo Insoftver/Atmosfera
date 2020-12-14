@@ -15,6 +15,8 @@ module Atmosfera
         copy_file "app/assets/stylesheets/start.scss", "app/assets/stylesheets/start.scss", force: true
         # Copying controllers
         copy_file "app/controllers/start_controller.rb", "app/controllers/start_controller.rb", force: true
+        # Generating Event Model
+        generate "scaffold", "event user:belongs_to start_time:datetime end_time:datetime title:string description:string", "--skip-template-engine", "--no-stylesheets"
         # Copying locales
         directory "config/locales", "config/locales", force: true
         puts "Start controller and views generated."
